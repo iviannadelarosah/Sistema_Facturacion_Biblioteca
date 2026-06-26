@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema de Facturación Biblioteca</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+<body style="font-family: 'Poppins', sans-serif;">
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color:#4D7EA8;">
+        <div class="container">
+            @if (!string.IsNullOrEmpty(Context.Session.GetString("UsuarioNombre")))
+            {
+                <a class="navbar-brand text-white d-flex align-items-center" asp-controller="Home" asp-action="Dashboard">
+                    <i class="bi bi-house-door-fill fs-4"></i>
+                </a>
+            }
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    @if (!string.IsNullOrEmpty(Context.Session.GetString("UsuarioNombre")))
+                    {
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Servicios" class="btn mx-1" style="background-color:#C7EFCF; color:#4D7EA8; font-weight:600; border-radius:6px;">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Facturas" class="btn mx-1" style="background-color:#F26A8D; color:white; font-weight:600; border-radius:6px;">Facturas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Pagos" class="btn mx-1" style="background-color:#C7EFCF; color:#4D7EA8; font-weight:600; border-radius:6px;">Pagos</a>
+                        </li>
+                    }
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    @if (string.IsNullOrEmpty(Context.Session.GetString("UsuarioNombre")))
+                    {
+                        <li class="nav-item">
+                            <a class="btn mx-1" style="background-color:#C7EFCF; color:#4D7EA8; font-weight:600; border-radius:6px;" asp-controller="Auth" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn mx-1" style="background-color:#F26A8D; color:white; font-weight:600; border-radius:6px;" asp-controller="Auth" asp-action="Register">Registro</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                <button type="submit" class="btn mx-1" style="background-color:#F26A8D; color:white; font-weight:600; border-radius:6px;">Cerrar sesión</button>
+                            </form>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center py-3 fixed-bottom" style="background-color:#F0F7EE;">
+        <p class="mb-0 fw-bold" style="color:#4D7EA8;">&copy; 2026 - Sistema de Facturación Biblioteca</p>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

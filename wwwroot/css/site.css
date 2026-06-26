@@ -1,0 +1,213 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}*/
+
+/* Paleta extendida */
+:root {
+    --color-azul: #4D7EA8;
+    --color-fondo-suave: #F0F7EE;
+    --color-verde-menta: #C7EFCF;
+    --color-vino: #880D1E;
+    --color-rojo: #DD2D4A;
+    --color-rosa-fuerte: #F26A8D;
+    --color-rosa-suave: #F49CBB;
+    --color-azul-claro: #CBEEF3;
+}
+
+/* Fuente global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo-suave);
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-azul) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
+/* Botones personalizados */
+.btn-login {
+    background-color: var(--color-verde-menta);
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+.btn-register {
+    background-color: var(--color-rosa-fuerte);
+    color: white;
+    font-weight: 600;
+}
+
+.btn-logout {
+    background-color: #333;
+    color: white;
+}
+
+/* Cards premium */
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-verde-menta);
+}
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h4 {
+        font-weight: 700;
+    }
+
+    /* Íconos dentro de cards */
+    .card i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+/* Estadísticas */
+.stats h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.stats p {
+    color: #555;
+}
+
+/* Frase motivacional */
+blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 5px solid var(--color-azul);
+    padding-left: 1rem;
+    margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-fondo-suave);
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    .stats h2 {
+        font-size: 1.8rem;
+    }
+}
+/* Botones de navegación */
+.btn-nav {
+    background-color: var(--color-verde-menta);
+    color: var(--color-azul);
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.btn-nav:hover {
+    background-color: var(--color-azul);
+    color: white;
+}
+
+/* Botón Login */
+.btn-login {
+    background-color: var(--color-verde-menta);
+    color: var(--color-azul);
+    font-weight: 600;
+    border-radius: 6px;
+}
+.btn-login:hover {
+    background-color: var(--color-azul);
+    color: white;
+}
+
+/* Botón Registro */
+.btn-register {
+    background-color: var(--color-rosa-fuerte);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.btn-register:hover {
+    background-color: var(--color-azul);
+    color: white;
+}
+
+/* Botón Logout */
+.btn-logout {
+    background-color: var(--color-rojo);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.btn-logout:hover {
+    background-color: var(--color-azul);
+    color: white;
+}
+
+/* Inputs registro/login */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid var(--color-azul);
+}
+
+    .form-control:focus {
+        border-color: var(--color-verde-menta);
+        box-shadow: 0 0 6px rgba(77,126,168,0.4);
+    }
+

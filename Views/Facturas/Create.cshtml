@@ -1,0 +1,31 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.Factura
+
+<h2>Crear Factura</h2>
+
+<form asp-controller="Facturas" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="IdUsuario"></label>
+        <select asp-for="IdUsuario" asp-items="ViewBag.Usuarios" class="form-control"></select>
+        <span asp-validation-for="IdUsuario" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaFactura"></label>
+        <input asp-for="FechaFactura" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Total"></label>
+        <input asp-for="Total" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Estado"></label>
+        <select asp-for="Estado" class="form-control">
+            <option value="Pendiente">Pendiente</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-controller="Home" asp-action="Facturas" class="btn btn-secondary">Cancelar</a>
+</form>

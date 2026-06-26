@@ -1,0 +1,68 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height:85vh;">
+    <div class="card shadow-lg border-0" style="width: 500px; background-color:#F0F7EE;">
+        <div class="card-body p-4">
+            <div class="mb-3">
+                <a asp-controller="Home" asp-action="Index"
+                   class="btn btn-sm d-flex align-items-center justify-content-center"
+                   style="background-color:#C7EFCF; color:#4D7EA8; width:40px; height:40px; border-radius:6px; padding:0;">
+                    <i class="bi bi-arrow-left fs-5"></i>
+                </a>
+
+            <h3 class="text-center fw-bold mb-4" style="color:#4D7EA8;">
+                <i class="bi bi-person-plus-fill me-2"></i> Crear Cuenta
+            </h3>
+
+            <form asp-action="Register" asp-controller="Auth" method="post">
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Apellido" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Apellido" class="form-control" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Telefono" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Password" class="form-control" type="password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmPassword" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-register">Registro</button>
+                </div>
+
+                <div class="text-center">
+                    <small class="text-muted">¿Ya tienes cuenta?</small>
+                    <a asp-controller="Auth" asp-action="Login" class="btn btn-login btn-sm ms-2">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

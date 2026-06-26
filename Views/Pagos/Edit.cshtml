@@ -1,0 +1,33 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.Pago
+
+<h2>Editar Pago</h2>
+
+<form asp-controller="Pagos" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IdPago" />
+
+    <div class="form-group">
+        <label asp-for="IdFactura"></label>
+        <select asp-for="IdFactura" class="form-control" asp-items="ViewBag.Facturas"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaPago"></label>
+        <input asp-for="FechaPago" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Monto"></label>
+        <input asp-for="Monto" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MetodoPago"></label>
+        <select asp-for="MetodoPago" class="form-control">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <a asp-controller="Home" asp-action="Pagos" class="btn btn-secondary">Cancelar</a>
+</form>

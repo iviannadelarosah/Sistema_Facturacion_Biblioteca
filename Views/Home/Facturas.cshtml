@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Sistema_Facturacion_Biblioteca.Models.Factura>
+@{
+    var rolUsuario = Context.Session.GetString("UsuarioRol");
+    ViewData["Title"] = "Facturas";
+}
+
+<h2 class="mb-3" style="color:#4D7EA8;">Lista de Facturas</h2>
+
+<div class="mb-3">
+    <a asp-controller="Facturas" asp-action="Create" class="btn btn-success">Crear Factura</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            @if (rolUsuario == "Admin")
+            {
+                <th>Acciones</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model)
+        {
+            <tr>
+                <td>@f.IdUsuario</td>
+                <td>@f.Total.ToString("C")</td>
+                <td>@f.Estado</td>
+                <td>@f.FechaFactura.ToShortDateString()</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(Context.Session.GetString("UsuarioRol"))
+                         && Context.Session.GetString("UsuarioRol") == "Admin")
+                    {
+                        <a asp-controller="Facturas" asp-action="Edit" asp-route-id="@f.IdFactura" class="btn btn-warning">Editar</a>
+                        <a asp-controller="Facturas" asp-action="Delete" asp-route-id="@f.IdFactura" class="btn btn-danger">Eliminar</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

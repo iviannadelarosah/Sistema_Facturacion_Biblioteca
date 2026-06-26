@@ -1,0 +1,43 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height:80vh;">
+    <div class="card shadow-lg border-0" style="width: 400px; background-color:#F0F7EE;">
+        <div class="card-body p-4">
+            <a asp-controller="Home" asp-action="Index"
+               class="btn btn-sm d-flex align-items-center justify-content-center"
+               style="background-color:#C7EFCF; color:#4D7EA8; width:40px; height:40px; border-radius:6px; padding:0;">
+                <i class="bi bi-arrow-left fs-5"></i>
+            </a>
+
+            <h3 class="text-center fw-bold mb-4" style="color:#4D7EA8;">
+                <i class="bi bi-person-circle me-2"></i> Iniciar Sesión
+            </h3>
+
+            <form asp-action="Login" asp-controller="Auth" method="post">
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Ingresa tu correo" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label fw-semibold" style="color:#4D7EA8;"></label>
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Ingresa tu contraseña" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-login">Login</button>
+                </div>
+
+                <div class="text-center">
+                    <small class="text-muted">¿No tienes cuenta?</small>
+                    <a asp-controller="Auth" asp-action="Register" class="btn btn-register btn-sm ms-2">Registro</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

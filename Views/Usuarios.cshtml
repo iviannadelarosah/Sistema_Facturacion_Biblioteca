@@ -1,0 +1,24 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.Usuario
+
+<div class="container mt-4">
+    <h2 class="text-primary fw-bold">Registrar Usuario</h2>
+    <form asp-action="Create" method="post" class="card p-3 shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input asp-for="Apellido" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input asp-for="Telefono" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success w-100">Guardar Usuario</button>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Sistema_Facturacion_Biblioteca.Models.Servicio>
+@{
+    var rolUsuario = Context.Session.GetString("UsuarioRol");
+    ViewData["Title"] = "Servicios";
+}
+
+<h2 class="mb-3" style="color:#4D7EA8;">Lista de Servicios</h2>
+
+<div class="mb-3">
+    <a asp-controller="Servicios" asp-action="Create" class="btn btn-success">Crear Servicio</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            @if (rolUsuario == "Admin")
+            {
+                <th>Acciones</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.NombreServicio</td>
+                <td>@s.Precio</td>
+                @if (rolUsuario == "Admin")
+                {
+                    <td>
+                        <a asp-controller="Servicios" asp-action="Edit" asp-route-id="@s.IdServicio" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-controller="Servicios" asp-action="Delete" asp-route-id="@s.IdServicio" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container py-4">
+    <h2 class="fw-bold mb-4" style="color:#4D7EA8;">Panel Principal</h2>
+    <p class="lead text-muted">Bienvenida, @Context.Session.GetString("UsuarioNombre")</p>
+
+    <div class="row text-center mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100 border-0" style="background-color:#F0F7EE;">
+                <div class="card-body">
+                    <i class="bi bi-lightbulb-fill display-4 mb-3" style="color:#4D7EA8;"></i>
+                    <h4 class="fw-bold" style="color:#4D7EA8;">Misión</h4>
+                    <p class="text-muted">Brindar soluciones eficientes y seguras para la gestión de facturación en bibliotecas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100 border-0" style="background-color:#F0F7EE;">
+                <div class="card-body">
+                    <i class="bi bi-eye-fill display-4 mb-3" style="color:#F26A8D;"></i>
+                    <h4 class="fw-bold" style="color:#4D7EA8;">Visión</h4>
+                    <p class="text-muted">Convertirnos en el sistema líder de gestión documental y financiera para instituciones educativas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100 border-0" style="background-color:#F0F7EE;">
+                <div class="card-body">
+                    <i class="bi bi-heart-fill display-4 mb-3" style="color:#4D7EA8;"></i>
+                    <h4 class="fw-bold" style="color:#4D7EA8;">Valores</h4>
+                    <p class="text-muted">Compromiso, transparencia, innovación y excelencia en cada proceso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <blockquote class="blockquote" style="color:#4D7EA8;">
+            <p>“La organización es la clave del éxito.”</p>
+        </blockquote>
+    </div>
+</div>

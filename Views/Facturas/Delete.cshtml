@@ -1,0 +1,10 @@
+﻿@model Sistema_Facturacion_Biblioteca.Models.Factura
+
+<h2>Eliminar Factura</h2>
+<p>¿Seguro que deseas eliminar la factura del usuario <strong>@Model.IdUsuario</strong> con total <strong>@Model.Total</strong>?</p>
+
+<form asp-controller="Facturas" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdFactura" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-controller="Home" asp-action="Facturas" class="btn btn-secondary">Cancelar</a>
+</form>
